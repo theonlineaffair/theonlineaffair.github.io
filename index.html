@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Online Affair</title>
+    <link href="https://fonts.googleapis.com/css?family=Coda:800" rel="stylesheet">
+    <style media="screen">
+      body {
+        margin: 0px;
+        font-family: 'Coda', cursive;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5CB5C;
+        height: 100vh;
+        width: 100%;
+        color: white;
+        flex-direction: column;
+      }
+
+      .divider {
+        height: 1px;
+        width: 10%;
+        background-color: lightgrey;
+      }
+
+      h1 {
+        font-size: 7em;
+      }
+
+      h3 {
+        font-size: 3em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>The Online Affair</h1>
+      <span class="divider"></span>
+      <h3 id="count-down"></h3>
+    </div>
+    <script type="text/javascript">
+      var deadline = new Date("July 23. 2019 00:00:00").getTime();
+      var x = setInterval(function(){
+        var now = new Date().getTime()
+        var t = deadline - now
+        var days = Math.floor(t/ (1000 * 60 *60 * 24))
+        var hours = Math.floor((t%(1000*60*60*24))/(1000*60*60))
+        var minutes = Math.floor((t%(1000*60*60))/(1000*60))
+        var seconds = Math.floor((t%(1000*60))/(1000))
+        document.getElementById("count-down").innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
+      }, 1000)
+    </script>
+  </body>
+</html>
